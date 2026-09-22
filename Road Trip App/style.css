@@ -1,0 +1,2547 @@
+/* =====================================================
+   BASE STYLES
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f3ea;
+    color: #263238;
+    line-height: 1.45;
+}
+
+button {
+    font: inherit;
+    padding: 10px 16px;
+    border: 2px solid #263238;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #263238;
+    cursor: pointer;
+    margin: 8px 8px 8px 0;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background-color 0.12s ease;
+}
+
+button:hover {
+    background: #eef4f1;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+/* =====================================================
+   APP LAYOUT
+   ===================================================== */
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content {
+    flex: 1;
+    padding: 24px;
+    padding-bottom: 100px;
+}
+
+
+/* =====================================================
+   HOME PAGE
+   ===================================================== */
+
+.home-page {
+    position: relative;
+    max-width: 600px;
+    min-height: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-road-art {
+    position: absolute;
+
+    left: 50%;
+    bottom: -200px;
+
+    width: 100%;
+    max-width: 600px;
+
+    transform: translateX(-50%);
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+
+    .home-road-art {
+        width: 120%;
+        max-width: none;
+        bottom: -200px;
+    }
+
+}
+
+/* Keep Home content above the artwork */
+
+.home-page h1,
+.home-page .page-label,
+.home-page h2,
+.home-page>p:not(.page-label),
+.home-page button {
+    position: relative;
+    z-index: 1;
+}
+
+/* =====================================================
+   HOME APP TITLE
+   ===================================================== */
+
+.home-page h1 {
+    margin: 18px 0 34px;
+    font-size: 2.5rem;
+    line-height: 0.95;
+    letter-spacing: 0.03em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #263238;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+}
+
+/* Home section label */
+
+.page-label {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 7px 14px;
+    border-radius: 10px;
+    background: #2a9d8f;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* =====================================================
+   HOME TRIP DETAILS
+   ===================================================== */
+
+.home-page h2 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    color: #315b7d;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+}
+
+.home-page>p:not(.page-label) {
+    margin: 0 0 28px;
+    font-size: 1rem;
+    color: #687078;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+}
+
+/* =====================================================
+   GAME LANDING PAGE
+   ===================================================== */
+
+.game-landing-page {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.game-landing-page>p {
+    margin: 0 0 24px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #687078;
+}
+
+/* =====================================================
+   LICENSE PLATE QUEST
+   ===================================================== */
+
+.license-plate-quest {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.license-plate-quest h1 {
+    text-align: center;
+}
+
+.state-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.license-plate-quest .canada-section {
+    margin-top: 24px;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 2px solid #d5d0c6;
+    border-radius: 12px;
+}
+
+.license-plate-quest .canada-section summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 2px 0;
+    color: #315b7d;
+}
+
+.license-plate-quest .canada-section .state-list {
+    margin-top: 16px;
+    gap: 8px;
+}
+
+.license-plate-quest .canada-section .state-item {
+    border: 1px solid #e1ddd5;
+}
+
+.license-plate-quest .state-collection {
+    margin-top: 24px;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 2px solid #d5d0c6;
+    border-radius: 12px;
+}
+
+.license-plate-quest .state-collection .state-list {
+    margin-top: 0;
+}
+
+.license-plate-quest .state-collection .state-item {
+    border: 1px solid #e1ddd5;
+}
+
+.state-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    background: #ffffff;
+    border: 1px solid #e1ddd5;
+    border-radius: 10px;
+}
+
+.state-check {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.state-check input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: #2a9d8f;
+}
+
+.state-check span {
+    font-weight: 600;
+}
+
+.state-details-button {
+    border: none;
+    background: none;
+    padding: 12px 16px;
+    margin: 0;
+    font-size: 1.35rem;
+    color: #315b7d;
+    cursor: pointer;
+}
+
+/* =====================================================
+   STATE DETAILS
+   ===================================================== */
+
+.state-details-page {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 10px 16px;
+    border: 2px solid #263238;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #263238;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.state-details-header {
+    text-align: center;
+}
+
+.state-abbreviation {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #687078;
+}
+
+.state-details-header h1 {
+    margin: 8px 0 12px;
+    font-size: 2rem;
+    color: #315b7d;
+}
+
+.state-status {
+    display: inline-block;
+    margin: 0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #e8e4dc;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.state-status.found {
+    background: #dcebdc;
+    color: #2f6b3a;
+}
+
+.plate-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0;
+    padding: 20px;
+    background: #ffffff;
+    border: 2px solid #d5d0c6;
+    border-radius: 14px;
+}
+
+.plate-display img {
+    max-width: 80%;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.state-info {
+    background: #ffffff;
+    border: 2px solid #d5d0c6;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.state-info-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.state-info-item span {
+    color: #5f686d;
+}
+
+.lifetime-other-plates .canada-section {
+    margin-top: 20px;
+}
+
+/* =====================================================
+   SCAVENGER HUNT
+   ===================================================== */
+
+.scavenger-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.scavenger-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: 2px solid #e1ddd5;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.scavenger-item input {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    accent-color: #2a9d8f;
+}
+
+.scavenger-item span {
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* =====================================================
+   SCAVENGER HUNT SETUP
+   ===================================================== */
+
+.scavenger-hunt-setup {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.scavenger-hunt-setup h2 {
+    margin: 24px 0 12px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #263238;
+}
+
+.scavenger-count-options,
+.scavenger-category-options {
+    display: grid;
+    gap: 10px;
+}
+
+.scavenger-count-options label,
+.scavenger-category-options label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 14px 16px;
+    border: 2px solid #d5d0c6;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #263238;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.scavenger-count-options label:has(input:checked),
+.scavenger-category-options label:has(input:checked) {
+    border-color: #2a9d8f;
+    background: #e8f4f1;
+    box-shadow: 0 2px 0 #d5d0c6;
+}
+
+.scavenger-count-options input,
+.scavenger-category-options input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: #2a9d8f;
+}
+
+#start-scavenger-hunt-button {
+    display: block;
+    width: 100%;
+    margin: 28px 0 12px;
+    padding: 14px 20px;
+    border: 2px solid #2a9d8f;
+    border-radius: 12px;
+    background: #2a9d8f;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background-color 0.12s ease;
+}
+
+#start-scavenger-hunt-button:hover {
+    background: #238b7f;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.12);
+}
+
+#start-scavenger-hunt-button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+#back-to-scavenger-hunt-button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #263238;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #263238;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#back-to-scavenger-hunt-button:hover {
+    background: #eef4f1;
+}
+
+/* =====================================================
+   HOME BUTTONS
+   ===================================================== */
+
+.home-page button {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 12px auto;
+    padding: 14px 20px;
+    border: 2px solid #263238;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #263238;
+    background: #ffffff;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background-color 0.12s ease;
+}
+
+.home-page button:hover {
+    background: #eef4f1;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.12);
+}
+
+.home-page button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+#play-games-button {
+    background: #2a9d8f;
+    border-color: #2a9d8f;
+    color: #ffffff;
+}
+
+#play-games-button:hover {
+    background: #238b7f;
+}
+
+#view-trip-button,
+#trips-button {
+    background: #ffffff;
+    border-color: #263238;
+    color: #263238;
+}
+
+/* =====================================================
+   BOTTOM NAVIGATION
+   ===================================================== */
+
+#bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 8px 4px 10px;
+    background: #ffffff;
+    border-top: 2px solid #d5d0c6;
+    box-shadow: 0 -3px 10px rgba(38, 50, 56, 0.08);
+    z-index: 100;
+}
+
+#bottom-nav button {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 9px 6px;
+    margin: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #687078;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+#bottom-nav button.active {
+    background: #e8f4f1;
+    color: #2a9d8f;
+    font-weight: 700;
+}
+
+/* =====================================================
+   INTERIOR PAGE TITLES
+   ===================================================== */
+
+.games-page h1,
+.game-landing-page h1,
+.trips-page h1,
+.scores-page h1,
+.more-page h1,
+.players-page h1,
+.settings-page h1,
+.about-page h1,
+.data-page h1,
+.license-plate-quest h1,
+.scavenger-hunt h1 {
+    position: relative;
+    margin: 12px 0 28px;
+    padding-bottom: 12px;
+    font-size: 2.25rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #263238;
+}
+
+.games-page h1::after,
+.game-landing-page h1::after,
+.trips-page h1::after,
+.scores-page h1::after,
+.more-page h1::after,
+.players-page h1::after,
+.settings-page h1::after,
+.about-page h1::after,
+.data-page h1::after,
+.license-plate-quest h1::after,
+.scavenger-hunt h1::after {
+    content: "";
+    display: block;
+    width: 52px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: #2a9d8f;
+}
+
+/* =====================================================
+   MAP STYLES
+   ===================================================== */
+
+.license-plate-map {
+    margin: 24px 0;
+}
+
+.map-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.us-map {
+    width: 100%;
+    overflow: hidden;
+}
+
+.us-map object {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   CURRENT TRIP
+   ===================================================== */
+
+.current-trip-section {
+    max-width: 600px;
+    margin: 0 auto 32px;
+    padding: 22px;
+    border: 2px solid #d5d0c6;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(38, 50, 56, 0.07);
+}
+
+.current-trip-section>h2 {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: #2a9d8f;
+    color: #ffffff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.current-trip-section>h3 {
+    margin: 0 0 6px;
+    font-size: 1.9rem;
+    line-height: 1.1;
+    color: #315b7d;
+}
+
+.current-trip-section>p {
+    margin: 6px 0;
+    color: #687078;
+}
+
+.current-trip-section>p:last-of-type {
+    margin-top: 14px;
+    font-weight: 600;
+    color: #263238;
+}
+
+/* =====================================================
+   TRIP ROUTE DIVIDER
+   ===================================================== */
+
+.current-trip-games {
+    position: relative;
+    margin-top: 24px;
+    padding-top: 24px;
+}
+
+.current-trip-games::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 4px;
+    right: 4px;
+    height: 8px;
+    background:
+        repeating-linear-gradient(90deg,
+            #d5d0c6 0 18px,
+            transparent 18px 30px);
+}
+
+.current-trip-games>h2 {
+    margin: 0 0 14px;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #263238;
+}
+
+/* =====================================================
+   CREATE TRIP FORM
+   ===================================================== */
+
+#create-trip-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 22px;
+    border: 2px solid #d5d0c6;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(38, 50, 56, 0.07);
+}
+
+#create-trip-form>label {
+    display: block;
+    margin: 0 0 7px;
+    color: #263238;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#create-trip-form>input,
+#create-trip-form>select {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin: 0 0 18px;
+    padding: 11px 13px;
+    border: 2px solid #d5d0c6;
+    border-radius: 10px;
+    background: #f7f3ea;
+    color: #263238;
+    font: inherit;
+}
+
+#create-trip-form>input:focus,
+#create-trip-form>select:focus {
+    outline: 3px solid #e8f4f1;
+    border-color: #2a9d8f;
+}
+
+#create-trip-form>input::placeholder {
+    color: #687078;
+}
+
+#create-trip-form fieldset {
+    margin: 6px 0 24px;
+    padding: 18px;
+    border: 2px solid #d5d0c6;
+    border-radius: 14px;
+    background: #f7f3ea;
+}
+
+#create-trip-form legend {
+    padding: 0 8px;
+    color: #315b7d;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+#add-player-button {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 16px;
+    border: 2px solid #2a9d8f;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #2a9d8f;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#add-player-button:hover {
+    background: #e8f4f1;
+}
+
+#submit-trip-button {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 20px;
+    border: 2px solid #2a9d8f;
+    border-radius: 12px;
+    background: #2a9d8f;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background-color 0.12s ease;
+}
+
+#submit-trip-button:hover {
+    background: #238b7f;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.12);
+}
+
+#submit-trip-button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+@media (max-width: 600px) {
+    #create-trip-form {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    #create-trip-form fieldset {
+        padding: 16px;
+    }
+}
+
+#create-trip-form>input,
+#create-trip-form>select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 11px 13px;
+}
+
+#create-trip-form>input[type="date"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* =====================================================
+   CURRENT GAME CARDS
+   ===================================================== */
+
+.current-game-card {
+    position: relative;
+    overflow: hidden;
+    padding: 16px 16px 16px 20px;
+    margin-bottom: 12px;
+    border: 2px solid #e1ddd5;
+    border-radius: 12px;
+    background: #f7f3ea;
+}
+
+.current-game-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #315b7d;
+}
+
+.current-game-card:last-child {
+    margin-bottom: 0;
+}
+
+.current-game-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: #315b7d;
+}
+
+.current-game-card p {
+    margin: 6px 0;
+    color: #687078;
+}
+
+.past-trip-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 16px 52px 16px 20px;
+    margin-bottom: 12px;
+    border: 2px solid #d5d0c6;
+    border-radius: 14px;
+    background: #ffffff;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.past-trip-card:hover {
+    transform: translateY(-2px);
+    border-color: #2a9d8f;
+    box-shadow: 0 4px 10px rgba(38, 50, 56, 0.12);
+}
+
+.past-trip-card:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(38, 50, 56, 0.10);
+}
+
+.past-trip-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: #2a9d8f;
+}
+
+.past-trip-card h3 {
+    margin: 0 0 6px;
+    color: #315b7d;
+    font-size: 1.15rem;
+}
+
+.past-trip-card p {
+    margin: 4px 0;
+    color: #687078;
+}
+
+.past-trip-card::after {
+    content: "→";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    line-height: 1;
+    color: #2a9d8f;
+    font-weight: 700;
+}
+
+/* =====================================================
+   PAST TRIP DETAILS
+   ===================================================== */
+
+.past-trip-details {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   TRIP HEADER
+   ===================================================== */
+
+.past-trip-details>h1 {
+    margin: 0 0 6px;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: #315b7d;
+}
+
+.past-trip-details>h1+p {
+    margin: 0 0 8px;
+    color: #687078;
+}
+
+.past-trip-details>h1+p+p {
+    margin: 0;
+    color: #263238;
+    font-weight: 600;
+}
+
+/* =====================================================
+   SECTION HEADERS
+   ===================================================== */
+
+.past-trip-achievements,
+.past-trip-games {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 2px solid #d5d0c6;
+}
+
+.past-trip-achievements>h2,
+.past-trip-games>h2 {
+    margin: 0 0 14px;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #263238;
+}
+
+/* =====================================================
+   ACHIEVEMENTS BY GAME
+   ===================================================== */
+
+.past-achievement-game {
+    margin-bottom: 20px;
+}
+
+.past-achievement-game:last-child {
+    margin-bottom: 0;
+}
+
+.past-achievement-game h3 {
+    margin: 0 0 10px;
+    color: #315b7d;
+    font-size: 1rem;
+}
+
+/* =====================================================
+   PAST GAME CARDS
+   ===================================================== */
+
+.past-game-card {
+    margin-bottom: 10px;
+    border: 2px solid #d5d0c6;
+    border-radius: 12px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.past-game-card:last-child {
+    margin-bottom: 0;
+}
+
+/* =====================================================
+   GAME TOGGLE
+   ===================================================== */
+
+.past-game-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 52px;
+    padding: 14px 16px;
+    border: none;
+    background: #ffffff;
+    color: #315b7d;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.past-game-toggle span {
+    flex-shrink: 0;
+    color: #687078;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* =====================================================
+   EXPANDED GAME DETAILS
+   ===================================================== */
+
+.past-game-details {
+    padding: 0 16px 16px;
+    border-top: 2px solid #eee9df;
+}
+
+.past-game-details p {
+    margin: 12px 0;
+    color: #687078;
+    line-height: 1.45;
+}
+
+.past-game-details h4 {
+    margin: 16px 0 8px;
+    color: #263238;
+    font-size: 0.95rem;
+}
+
+.past-game-details ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #687078;
+}
+
+.past-game-details li {
+    margin-bottom: 5px;
+}
+
+/* =====================================================
+   ACHIEVEMENT CARDS ON PAST TRIP
+   ===================================================== */
+
+.past-trip-achievements .achievement-card {
+    box-shadow: 0 3px 0 #e1ddd5;
+}
+
+/* =====================================================
+   MAIN ACTION BUTTONS
+   ===================================================== */
+
+#create-trip-button,
+#complete-trip-button,
+#new-game-button,
+#continue-game-button,
+#start-scavenger-hunt-button,
+#scavenger-complete-done-button,
+#lifetime-collection-button {
+
+    padding: 12px 18px;
+    border: 2px solid #2a9d8f;
+    border-radius: 10px;
+    background: #2a9d8f;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 8px 8px 8px 0;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background-color 0.12s ease;
+}
+
+#create-trip-button:hover,
+#complete-trip-button:hover,
+#new-game-button:hover,
+#continue-game-button:hover,
+#start-scavenger-hunt-button:hover,
+#scavenger-complete-done-button:hover,
+#lifetime-collection-button:hover {
+    background: #238b7f;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.12);
+}
+
+#create-trip-button:active,
+#complete-trip-button:active,
+#new-game-button:active,
+#continue-game-button:active,
+#start-scavenger-hunt-button:active,
+#scavenger-complete-done-button:active,
+#lifetime-collection-button:active {
+    transform: translateY(1px);
+}
+
+/* Current game action */
+
+.continue-current-game-button {
+    padding: 10px 16px;
+    border: 2px solid #315b7d;
+    border-radius: 10px;
+    background: #315b7d;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 8px 0 0;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background-color 0.12s ease;
+}
+
+.continue-current-game-button:hover {
+    background: #274b67;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.12);
+}
+
+.continue-current-game-button:active {
+    transform: translateY(1px);
+}
+
+/* =====================================================
+   SECONDARY / NAVIGATION BUTTONS
+   ===================================================== */
+
+#back-to-games-button,
+#back-to-scavenger-hunt-button,
+#leave-scavenger-hunt-button {
+    background: white;
+    border: 2px solid #263238;
+    color: #263238;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =====================================================
+   END GAME BUTTON
+   ===================================================== */
+
+#end-scavenger-hunt-button {
+    border-color: #8a4b4b;
+    color: #8a4b4b;
+}
+
+/* =====================================================
+   GAMES PAGE
+   ===================================================== */
+
+.games-page {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   S-ROAD GAME LAYOUT
+   ===================================================== */
+
+.games-road {
+    position: relative;
+    padding: 70px 0 140px;
+}
+
+/* =====================================================
+   GAME POCKETS
+   ===================================================== */
+
+.game-pocket {
+    position: relative;
+    z-index: 1;
+    min-height: 190px;
+    display: flex;
+    align-items: center;
+    transform: translateY(-75px);
+}
+
+.pocket-left {
+    justify-content: flex-start;
+    padding-right: 58%;
+}
+
+.pocket-right {
+    justify-content: flex-end;
+    padding-left: 58%;
+    
+}
+
+/* =====================================================
+   POCKET SCENERY
+   ===================================================== */
+
+.pocket-scenery {
+    position: absolute;
+    top: 50%;
+    width: 44%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.pocket-left .pocket-scenery {
+    right: -15%;
+}
+
+.pocket-right .pocket-scenery {
+    left: -15px;
+}
+
+.pocket-scenery img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* =====================================================
+   GAME CARDS
+   ===================================================== */
+
+.game-card {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    border: 2px solid #d5d0c6;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.08);
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-2px);
+    border-color: #2a9d8f;
+    box-shadow: 0 5px 12px rgba(38, 50, 56, 0.12);
+}
+
+.game-icon {
+    width: 56px;
+    height: 64px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-icon span {
+    display: block;
+    width: 56px;
+    height: 64px;
+}
+
+.game-card h2 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    line-height: 1.15;
+    color: #315b7d;
+}
+.pocket-left .game-card {
+    transform: translateX(6%);
+
+}
+.game-card p {
+    margin: 0 0 14px;
+    color: #687078;
+    line-height: 1.45;
+}
+
+/* =====================================================
+   ROAD
+   ===================================================== */
+
+.games-road-svg {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 100px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.road-base {
+    fill: none;
+    stroke: #8d8d8d;
+    stroke-width: 70;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.road-center {
+    fill: none;
+    stroke: #f2c94c;
+    stroke-width: 6;
+    stroke-dasharray: 14 14;
+    stroke-linecap: round;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .game-pocket {
+        min-height: 180px;
+    }
+
+    .pocket-left {
+        padding-right: 40%;
+    }
+
+    .pocket-right {
+        padding-left: 40%;
+    }
+
+    .game-card {
+        padding: 16px;
+    }
+      .pocket-scenery img {
+        max-width: 120px;
+    }
+
+}
+
+/* =====================================================
+   GAME INSTRUCTIONS
+   ===================================================== */
+
+.game-instructions {
+    margin: 24px 0;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 2px solid #d5d0c6;
+    border-radius: 12px;
+}
+
+.game-instructions summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #315b7d;
+}
+
+.game-instructions p {
+    margin: 12px 0 0;
+    line-height: 1.5;
+    color: #687078;
+}
+
+/* =====================================================
+   SCORES PAGE
+   ===================================================== */
+
+.scores-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.scores-card {
+    padding: 1.25rem;
+    border: 2px solid #d5d0c6;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.06);
+}
+
+.scores-card h2 {
+    margin-top: 0;
+    color: #315b7d;
+}
+
+/* =====================================================
+    BINGO GRID
+   ===================================================== */
+.bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 3px;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto;
+}
+
+.bingo-square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    min-height: 0;
+    padding: 3px;
+    border: 2px solid #d5d0c6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #263238;
+    font-size: 0.70rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bingo-square.found {
+    background: #2a9d8f;
+    border-color: #263238;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   ACHIEVEMENT CARDS
+   ===================================================== */
+
+.achievement-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.achievement-card {
+    position: relative;
+    padding: 1.25rem 1rem 1.1rem;
+    text-align: center;
+    border: 2px solid #d5d0c6;
+    border-radius: 18px;
+    background:
+        linear-gradient(145deg,
+            #ffffff 0%,
+            #f7f3ea 100%);
+    box-shadow:
+        0 4px 0 #e1ddd5;
+    overflow: hidden;
+}
+
+/* Decorative route-circle */
+
+.achievement-card::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    bottom: -30px;
+    width: 92px;
+    height: 92px;
+    border: 10px solid rgba(42, 157, 143, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+/* Achievement badge */
+
+.achievement-badge {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 0.75rem;
+    font-size: 1.7rem;
+    border: 3px solid #b9bec3;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow:
+        inset 0 0 0 5px #e5e7e9;
+    position: relative;
+    z-index: 1;
+}
+
+.achievement-card h3,
+.achievement-card h4 {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #263238;
+}
+
+.achievement-card p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #687078;
+}
+
+
+/* License Plate Quest */
+
+.achievement-game-section:first-child .achievement-badge {
+    border-color: #315b7d;
+    background: #eef3f6;
+}
+
+
+/* Scavenger Hunt */
+
+.achievement-game-section:nth-child(2) .achievement-badge {
+    border-color: #2a9d8f;
+    background: #e8f4f1;
+}
+
+
+/* Lifetime achievement cards */
+
+.lifetime-achievements-card .achievement-badge {
+    background: #f7f3ea;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .achievement-card {
+        padding: 1.1rem 1rem 1rem;
+    }
+
+}
+
+/* =====================================================
+   THREE-STAR BADGE
+   ===================================================== */
+.three-star-badge {
+    position: relative;
+
+    width: 42px;
+    height: 38px;
+
+    display: block;
+
+}
+
+.three-star-badge span {
+    position: absolute;
+
+    font-size: 1.15rem;
+
+    line-height: 1;
+
+    color: #f2c94c;
+}
+
+.three-star-badge span:nth-child(1) {
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.three-star-badge span:nth-child(2) {
+    bottom: 0;
+    left: 2px;
+
+
+}
+
+.three-star-badge span:nth-child(3) {
+    bottom: 0;
+    right: 2px;
+
+}
+
+/* =====================================================
+  3 BADGE
+   ===================================================== */
+.three-plates-badge {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.three-plates-badge svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.three-plates-car {
+    fill: none;
+    stroke: #263238;
+    stroke-width: 3;
+    stroke-linejoin: round;
+}
+
+.three-plates-plate {
+    fill: #f5f1e7;
+    stroke: #263238;
+    stroke-width: 1.5;
+}
+
+.three-plates-light {
+    fill: #263238;
+}
+
+.three-plates-number-circle {
+    fill: #f2c94c;
+    stroke: #685f45;
+    stroke-width: 2;
+}
+
+.three-plates-number {
+    fill: #263238;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* =====================================================
+   M & M BADGE
+   ===================================================== */
+.mm-badge {
+    display: block;
+    width: 52px;
+    height: 48px;
+}
+
+.mm-badge svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mm-red {
+    fill: #c94b4b;
+    stroke: #685f45;
+    stroke-width: 2;
+}
+
+.mm-blue {
+    fill: #315b7d;
+    stroke: #685f45;
+    stroke-width: 2;
+}
+
+.mm-letter {
+    fill: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.triple-letter-badge {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.triple-letter-badge svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* =====================================================
+   MNO Road sign BADGE
+   ===================================================== */
+.mno-sign-badge {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.mno-sign-badge svg {
+    display: block;
+    width: 48px;
+    height: 48px;
+
+}
+
+.mno-sign {
+    fill: #20b146;
+    stroke: #fafaf8;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.mno-connector {
+    stroke: #ffffff;
+    stroke-width: 1;
+    stroke-linecap: round;
+}
+
+.mno-text {
+    fill: #ffffff;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.mno-letter {
+    font-size: 9px;
+}
+
+.mno-distance {
+    font-size: 6px;
+}
+
+
+/* =====================================================
+   Scrabble BADGE
+   ===================================================== */
+
+.scrabble-board {
+    fill: #d8c7a3;
+    stroke: #685f45;
+    stroke-width: 2;
+}
+
+.scrabble-grid {
+    stroke: #8f8062;
+    stroke-width: 1.25;
+}
+
+.scrabble-blue {
+    fill: #6f9db8;
+}
+
+.scrabble-red {
+    fill: #c9786f;
+}
+
+.scrabble-yellow {
+    fill: #e0bd5c;
+}
+
+.emoji-achievement {
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/* =====================================================
+   ROAD TRIP BADGE
+   ===================================================== */
+.road-trip-badge {
+    display: block;
+
+    width: 48px;
+    height: 48px;
+}
+
+.road-trip-badge svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.badge-road-base {
+    fill: none;
+
+    stroke: #8d8d8d;
+
+    stroke-width: 16;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.badge-road-center {
+    fill: none;
+
+    stroke: #f2c94c;
+
+    stroke-width: 2;
+
+    stroke-dasharray: 5 5;
+
+    stroke-linecap: round;
+}
+
+/* =====================================================
+  EYE BADGE
+   ===================================================== */
+.eye-badge {
+    display: block;
+
+    width: 48px;
+    height: 48px;
+}
+
+.eye-badge svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.eye-outline {
+    fill: none;
+
+    stroke: #b8b09b;
+
+    stroke-width: 5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.eye-iris {
+    fill: #b8b09b;
+}
+
+.eye-pupil {
+    fill: #685f45;
+}
+
+.eye-glint {
+    fill: #ffffff;
+}
+
+/* =====================================================
+   FLAG BADGE
+   ===================================================== */
+.flag-badge {
+    display: block;
+
+    width: 48px;
+    height: 48px;
+}
+
+.flag-badge svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.flag-pole {
+    stroke: #685f45;
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+}
+
+.flag-cloth {
+    fill: #685f45;
+}
+
+.flag-light {
+    fill: #f5f1e7;
+}
+
+/* =====================================================
+   FINISH BADGE
+   ===================================================== */
+.finish-badge {
+    display: block;
+
+    width: 48px;
+    height: 48px;
+}
+
+.finish-badge svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.finish-pole {
+    stroke: #685f45;
+
+    stroke-width: 4;
+
+    stroke-linecap: round;
+}
+
+.finish-flag {
+    fill: #685f45;
+}
+
+.finish-light {
+    fill: #f5f1e7;
+}
+
+/* =====================================================
+   COMPASS BADGE
+   ===================================================== */
+.compass-badge {
+    display: block;
+
+    width: 48px;
+    height: 48px;
+}
+
+.compass-badge svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+.compass-ring {
+    fill: none;
+
+    stroke: #f2c94c;
+
+    stroke-width: 4;
+}
+
+.compass-line {
+    stroke: #f2c94c;
+
+    stroke-width: 2;
+}
+
+.compass-north {
+    fill: #315b7d;
+}
+
+.compass-south {
+    fill: #8d8d8d;
+}
+
+.compass-center {
+    fill: #315b7d;
+}
+
+/* =====================================================
+   LIFETIME COLLECTION
+   ===================================================== */
+
+.lifetime-collection-card progress {
+    width: 100%;
+    height: 12px;
+    margin-bottom: 1rem;
+
+    accent-color: #2a9d8f;
+}
+
+.lifetime-other-plates {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 2px solid #eee9df;
+}
+
+.lifetime-other-plates h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #315b7d;
+}
+
+
+/* =====================================================
+   INTERSTATE BADGES
+   ===================================================== */
+
+.interstate-badge {
+    display: block;
+    width: 48px;
+    height: 52px;
+}
+
+.interstate-badge svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.interstate-shield {
+    fill: #315b7d;
+    stroke: #685f45;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.interstate-red {
+    fill: #c94b4b;
+}
+
+.interstate-number {
+    fill: #f5f1e7;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   TROPHY BADGE
+   ===================================================== */
+
+.trophy-badge {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.trophy-badge svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.trophy-cup {
+    fill: #f2c94c;
+    stroke: #685f45;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.trophy-outline {
+    fill: none;
+    stroke: #685f45;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.trophy-stem {
+    fill: #f2c94c;
+    stroke: #685f45;
+    stroke-width: 2;
+}
+
+.trophy-base {
+    fill: #f2c94c;
+    stroke: #685f45;
+    stroke-width: 2;
+}
+
+/* =====================================================
+   GREAT LAKES BADGE
+   ===================================================== */
+
+.great-lakes-badge {
+    display: block;
+
+    width: 52px;
+    height: 42px;
+}
+
+.great-lakes-badge img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+/* =====================================================
+   LIFETIME ACHIEVEMENTS
+   ===================================================== */
+
+.lifetime-achievements-card .achievement-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .scores-card {
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .achievement-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   ACHIEVEMENT UNLOCK POPUP
+   ===================================================== */
+
+#achievement-unlocked-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.25rem;
+
+    background: rgba(38, 50, 56, 0.55);
+}
+
+.achievement-popup {
+    width: min(100%, 360px);
+
+    padding: 2rem 1.5rem;
+
+    text-align: center;
+
+    border: 3px solid #2a9d8f;
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 24px rgba(38, 50, 56, 0.18);
+}
+
+.achievement-popup-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+}
+
+.achievement-popup-label {
+    margin: 0 0 0.5rem;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #2a9d8f;
+}
+
+.achievement-popup h2 {
+    margin: 0 0 0.75rem;
+
+    color: #315b7d;
+}
+
+.achievement-popup p {
+    margin-top: 0;
+
+    color: #687078;
+    line-height: 1.5;
+}
+
+.achievement-popup button {
+    margin-top: 1rem;
+}
+
+/* =====================================================
+   PLAYER ROWS
+   ===================================================== */
+
+.player-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+    padding: 0.65rem 0.75rem;
+
+    border: 2px solid #d5d0c6;
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.player-row span {
+    flex: 1;
+    font-weight: 600;
+    color: #263238;
+}
+
+.player-row button {
+    width: auto;
+    padding: 0.35rem 0.6rem;
+
+    font-size: 0.75rem;
+    line-height: 1;
+
+    border: 1px solid #b9bec3;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #263238;
+
+    cursor: pointer;
+}
+
+.player-row button:hover {
+    border-color: #2a9d8f;
+    color: #2a9d8f;
+}
+
+
+/* =====================================================
+   PLAYER POPUP
+   ===================================================== */
+
+.player-popup {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: rgba(38, 50, 56, 0.55);
+
+    z-index: 1000;
+}
+
+.player-popup-content {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 1.25rem;
+
+    border: 2px solid #2a9d8f;
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 24px rgba(38, 50, 56, 0.18);
+}
+
+.player-popup-content h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-size: 1.15rem;
+    color: #315b7d;
+}
+
+.player-select-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.player-select-option {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    padding: 0.7rem;
+
+    border: 2px solid #d5d0c6;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.player-select-option:hover {
+    border-color: #2a9d8f;
+    background: #f7f3ea;
+}
+
+.player-select-option input {
+    margin: 0;
+    accent-color: #2a9d8f;
+}
+
+.player-select-option span {
+    font-weight: 600;
+    color: #263238;
+}
+
+.player-popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+
+    margin-top: 1rem;
+}
+
+.player-popup-buttons button {
+    width: auto;
+
+    padding: 0.45rem 0.7rem;
+
+    font-size: 0.75rem;
+}
+
+
+/* =====================================================
+   ABOUT PAGE
+   ===================================================== */
+
+.about-content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    text-align: center;
+
+    border: 2px solid #d5d0c6;
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 3px 8px rgba(38, 50, 56, 0.06);
+}
+
+.about-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.about-content h2 {
+    margin: 0 0 0.4rem;
+    color: #315b7d;
+}
+
+.about-tagline {
+    margin-top: 0;
+    font-weight: 600;
+    color: #2a9d8f;
+}
+
+.about-content>p:not(.about-tagline):not(.about-version):not(.about-footer) {
+    line-height: 1.5;
+    color: #687078;
+}
+
+.about-version {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #687078;
+}
+
+.about-footer {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #687078;
+}
+
+
+/* =====================================================
+   DATA SECTION
+   ===================================================== */
+
+.data-section {
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+
+    border: 2px solid #d5d0c6;
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 3px 8px rgba(38, 50, 56, 0.06);
+}
+
+.data-section h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #315b7d;
+}
+
+.data-section p {
+    margin-top: 0;
+    line-height: 1.5;
+    color: #687078;
+}
+
+.data-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.data-buttons button,
+.data-section button {
+    width: auto;
+}
+
+.data-danger-section {
+    border-color: #d8b4b4;
+}
+
+
+/* =====================================================
+   SETTINGS MENU
+   ===================================================== */
+
+.settings-menu {
+    display: grid;
+    gap: 0.75rem;
+
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.settings-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    width: 100%;
+    padding: 1rem;
+
+    border: 2px solid #d5d0c6;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    text-align: left;
+    color: #263238;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.settings-menu-button:hover {
+    border-color: #2a9d8f;
+    background: #f7f3ea;
+    box-shadow: 0 3px 8px rgba(38, 50, 56, 0.08);
+}
+
+.settings-menu-button:active {
+    transform: translateY(1px);
+}
+
+.settings-menu-icon {
+    font-size: 1.4rem;
+}
